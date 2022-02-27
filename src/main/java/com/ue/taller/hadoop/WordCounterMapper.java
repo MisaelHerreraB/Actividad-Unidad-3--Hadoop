@@ -18,7 +18,7 @@ public class WordCounterMapper extends Mapper<LongWritable, Text, Text, IntWrita
 			throws IOException, InterruptedException{
 		
 		String line = value.toString();
-		line = line.replaceAll("[^a-zA-Z0-9 ]", " ").toLowerCase();
+		line = line.replaceAll("[^A-Z ]", " ").toLowerCase();
 		Text currentWord = new Text();
 		
 		String workd[] = SPLIT_PATTERN.split(line);
